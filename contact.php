@@ -82,7 +82,7 @@ if(isset($_POST["submit"])){
 <nav class="navbar py-1 navbar-dark navbar-expand-sm bg-info fixed-top">
     <div class="container">
         <!-- logo -->
-        <img src="img/icon.png" class="nav-logo" alt="AW Logo">
+        <a href="index.html"><img src="img/icon.png" class="nav-logo" alt="AW Logo"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
             <span class="navbar-toggler-icon"></span>
@@ -99,7 +99,7 @@ if(isset($_POST["submit"])){
                     <a href="contact.php" class="nav-link pl-1 active">Contact</a></li>
             
             </ul>
-            <a href="whipple_resume2.pdf" class="btn" download><i class="fas fa-download "></i>&nbsp;&nbsp;Download Resum&#233;</a>
+            <a href="whipple_resume.pdf" class="btn" download><i class="fas fa-download "></i>&nbsp;&nbsp;Download Resum&#233;</a>
         </div>
     </div>
 </nav>
@@ -223,7 +223,7 @@ if(isset($_POST["submit"])){
                         <a href="https://github.com/aaronjwhipple87" target="_blank">
                             <i class="fab fa-github fa-3x m-2"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/aaron-whipple-84790" target="_blank">
+                        <a href="https://www.linkedin.com/in/aaronjwhipple" target="_blank">
                             <i class="fab fa-linkedin fa-3x m-2"></i>
                         </a>
                     </div>
