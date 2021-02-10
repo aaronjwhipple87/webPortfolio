@@ -1,20 +1,20 @@
 <?php
 $msg = "";
 
-//db connection
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'W01254652';
-$DATABASE_PASS = 'Aaroncs!';
-$DATABASE_NAME = 'W01254652';
+// //db connection
+// $DATABASE_HOST = 'localhost';
+// $DATABASE_USER = 'W01254652';
+// $DATABASE_PASS = 'Aaroncs!';
+// $DATABASE_NAME = 'W01254652';
 
-// Try and connect using the info above.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// // Try and connect using the info above.
+// $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
-if (mysqli_connect_errno() ) {
+// if (mysqli_connect_errno() ) {
 
-// If there is an error with the connection, stop the script and display the error.
-    die ('Failed to connect to database!');
-}
+// // If there is an error with the connection, stop the script and display the error.
+//     die ('Failed to connect to database!');
+// }
 
 
 
@@ -27,7 +27,7 @@ if(isset($_POST["submit"])){
     }
 
     //email content
-    $toEmail = 'aaronwhipple@mail.weber.edu';
+    $toEmail = 'aaronjwhipple@gmail.com';
     $from = $_POST['name'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];

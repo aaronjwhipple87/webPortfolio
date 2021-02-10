@@ -198,6 +198,10 @@ SKILLS SECTION
     max-width: 9rem;
 }
 
+.mysql-logo{
+    max-width: 9rem;
+}
+
 .progress{
     height:2rem !important;
     
@@ -212,7 +216,15 @@ SKILLS SECTION
 }
 
 .mongodb-logo{
-    max-width: 4.75rem;
+    max-width: 6.5rem;
+}
+
+.python-logo{
+    max-width: 7rem;
+}
+
+.java-logo{
+    max-width: 2rem;
 }
 
 /******************************
@@ -302,7 +314,7 @@ PROJECTS SECTION
 }
 
 .prjct-bg1{
-    background: url(../img/projects/rhp.jpg)center/cover;
+    background: url(../img/projects/rhp-opt.jpg)center/cover;
 }
 
 .prjct-bg2{
@@ -314,7 +326,7 @@ PROJECTS SECTION
 }
 
 .prjct-bg4{
-    background: url(../img/projects/blog.jpg)center/cover;
+    background: url(../img/projects/blog.jpg)center;
 }
 
 .prjct-bg5{
@@ -330,11 +342,19 @@ PROJECTS SECTION
 }
 
 .prjct-bg8{
-    background: url(../img/projects/rock-paper-scissors-flat-icons.png)center/cover;
+    background: url(../img/projects/rock-paper-scissors-flat-icons_opt.png)center;
 }
 
 .prjct-bg9{
     background: url(../img/projects/text-adventure.PNG)center/cover;
+}
+
+.prjct-bg10{
+    background: url(../img/projects/cookbook.jpg)center/cover;
+}
+
+.prjct-bg11{
+    background: url(../img/projects/amazon-logo_opt.png)center;
 }
 
 .hovereffect{
