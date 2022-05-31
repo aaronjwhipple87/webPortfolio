@@ -232,7 +232,7 @@ if(isset($_POST["submit"])){
         </div>
         <div class="row py-2 text-center text-info">
             <div class="col-md-12 col-xs-12 col-sm-12 ml-auto">
-                <p><span class="pr-2">&#169;&nbsp;2020 AaronJWhipple</span> 
+                <p><span class="pr-2">&#169;&nbsp;2022 AaronJWhipple</span> 
                 <span class="pl-2"><a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></span> </p>
             </div>
         </div>
