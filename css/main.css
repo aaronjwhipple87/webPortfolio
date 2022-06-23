@@ -10984,6 +10984,14 @@ PROJECTS SECTION
   background: url(../img/projects/amazon-logo_opt.png) center;
 }
 
+.prjct-bg12 {
+  background: url(../img/projects/sinless_opt.png) center;
+}
+
+.prjct-bg13 {
+  background: url(../img/projects/CD_Horizontal_whiteFont.png) center no-repeat #1789C4;
+}
+
 .hovereffect {
   width: 100%;
   height: 100%;
