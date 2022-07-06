@@ -10996,6 +10996,10 @@ PROJECTS SECTION
   background: url(../img/projects/DF_wholesale_1.png) center/cover #FFFEF2;
 }
 
+.prjct-bg15 {
+  background: url(../img/projects/SAPA_Logo_white_opt.png) center no-repeat #1F1D2C;
+}
+
 .hovereffect {
   width: 100%;
   height: 100%;
