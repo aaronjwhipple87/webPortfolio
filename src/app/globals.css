@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Palette carried over from the original Bootstrap theme. */
+@theme {
+  --color-mist: #adc4ce;
+  --color-ink: #223134;
+  --color-berry: #922260;
+  --color-berry-dark: #75174d;
+  --color-paper: #f7f9fa;
+  --font-sans: var(--font-monda), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-julius), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-berry);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
