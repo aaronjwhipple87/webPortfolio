@@ -810,7 +810,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "http://aaronjwhipple.com/Whipple_Attigo/",
+        "href": "/Whipple_Attigo/",
         "label": "See Live"
       }
     ],
@@ -876,10 +876,6 @@ export const projects: Project[] = [
       "3 months"
     ],
     "links": [
-      {
-        "href": "http://aaronjwhipple.com/Budget_Rite/budget/",
-        "label": "See Live"
-      },
       {
         "href": "https://github.com/aaronjwhipple87/budget-rite",
         "label": "See GitHub Repo"
@@ -949,7 +945,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "http://aaronjwhipple.com/Whipple_RHP_Project/",
+        "href": "/Whipple_RHP_Project/",
         "label": "See Live"
       }
     ],
@@ -1014,7 +1010,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "http://aaronjwhipple.com/CG_Solutions/",
+        "href": "/CG_Solutions/",
         "label": "See Live"
       }
     ],
@@ -1157,12 +1153,7 @@ export const projects: Project[] = [
     "timeline": [
       "2 Weeks"
     ],
-    "links": [
-      {
-        "href": "http://aaronjwhipple.com/Blog/",
-        "label": "See Live"
-      }
-    ],
+    "links": [],
     "hero": {
       "src": "/img/projects/blog2.png",
       "alt": "image of block letters spelling blog",
@@ -1226,7 +1217,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "http://aaronjwhipple.com/BMW_Enthusiast/",
+        "href": "/BMW_Enthusiast/",
         "label": "See Live"
       }
     ],
@@ -1287,7 +1278,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "http://aaronjwhipple.com/RPS/",
+        "href": "/RPS/",
         "label": "See Live"
       }
     ],
