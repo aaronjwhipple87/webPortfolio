@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* Palette carried over from the original Bootstrap theme. */
+@theme {
+  --color-mist: #adc4ce;
+  --color-ink: #223134;
+  --color-berry: #922260;
+  --color-berry-dark: #75174d;
+  --color-paper: #f7f9fa;
+  --color-pink: #be7aa0;
+  --font-sans: var(--font-monda), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-julius), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-kaushan), cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-berry);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Original site's octagon project cards. */
+.octagon {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+/* Bootstrap-style animated striped skill bars from the original site. */
+.bar-striped {
+  background-image: linear-gradient(
+    45deg,
+    rgb(255 255 255 / 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgb(255 255 255 / 0.15) 50%,
+    rgb(255 255 255 / 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: bar-stripes 1s linear infinite;
+}
+
+@keyframes bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 1s ease-in both;
+}
+
+.slide-in-right {
+  animation: slide-in-right 1s ease-in both;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Original "appearAnimate": grows in from half size while fading in. */
+.appear {
+  animation: appear 2s ease-in both;
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-striped,
+  .slide-in-left,
+  .slide-in-right,
+  .appear {
+    animation: none;
+  }
+}
