@@ -1,6 +1,6 @@
 import type { Project } from "./types";
 
-// Content ported from the original static site (see the legacy-static git tag).
+// Content ported from the original static site (see the legacy-static branch).
 export const projects: Project[] = [
   {
     "slug": "df-patient-portal",

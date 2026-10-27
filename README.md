@@ -2,7 +2,7 @@
 
 Personal portfolio of Aaron Whipple, built with Next.js (App Router), React, TypeScript and Tailwind CSS, deployed on Vercel.
 
-The original hand-built HTML/PHP site is preserved at the [`legacy-static`](https://github.com/aaronjwhipple87/webPortfolio/tree/legacy-static) tag.
+The original hand-built HTML/PHP site is preserved on the [`legacy-static`](https://github.com/aaronjwhipple87/webPortfolio/tree/legacy-static) branch.
 
 ## Development
 
