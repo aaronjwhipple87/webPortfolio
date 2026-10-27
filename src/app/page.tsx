@@ -8,7 +8,12 @@ import { featuredProjects } from "@/lib/projects";
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden lg:min-h-[90vh]">
+      {/*
+        As on the original, the name sits on the monitor screen in the photo. The hero is never wider than
+        the photo's aspect ratio, so the photo is always scaled by height and the screen's position can be
+        expressed in container-height units (cqh): the screen is about 71cqh wide, 40cqh tall, 26cqh from the top.
+      */}
+      <section className="relative h-[max(28rem,60svh)] overflow-hidden [container-type:size] md:aspect-[1819/1129] md:h-auto">
         <Image
           src="/img/hero/hero3.jpg"
           alt=""
@@ -18,13 +23,13 @@ export default function Home() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-[rgba(124,99,99,0.2)] to-black/20" />
-        <div className="relative mx-4 max-w-xl rounded-2xl bg-paper/70 px-6 py-8 text-center shadow-lg backdrop-blur-sm sm:px-10">
-          <h1 className="font-display text-4xl font-bold text-berry sm:text-5xl lg:text-6xl">{site.name}</h1>
-          <hr className="mx-auto my-4 w-40 border-t-4 border-berry" />
-          <p className="text-lg text-ink sm:text-xl">{site.tagline}</p>
+        <div className="absolute top-[28cqh] left-[calc(50%+1cqh)] flex h-[36cqh] w-[64cqh] -translate-x-1/2 flex-col items-center justify-center text-center">
+          <h1 className="font-display text-[6.4cqh] leading-tight font-bold whitespace-nowrap text-berry">{site.name}</h1>
+          <hr className="my-[1.5cqh] w-[45%] border-berry" />
+          <p className="text-[max(0.9rem,2.6cqh)] text-ink">{site.tagline}</p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry"
+            className="mt-[3cqh] inline-block rounded-full border-2 border-berry bg-berry px-[6cqh] py-[0.8cqh] text-[max(0.9rem,2.4cqh)] font-bold text-white transition-colors hover:bg-mist hover:text-berry"
           >
             Contact Me
           </Link>

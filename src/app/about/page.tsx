@@ -25,17 +25,7 @@ export default function AboutPage() {
       />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
 
-      <section className="relative bg-mist pt-12 pb-16 xl:min-h-[44rem]">
-        {/* On wide screens the portrait sits to the left and points at the fun facts, as on the original. */}
-        <Image
-          src={about.portrait.src}
-          alt={about.portrait.alt}
-          width={600}
-          height={800}
-          sizes="28rem"
-          preload
-          className="absolute top-56 left-0 z-10 hidden w-[28rem] max-w-[34%] xl:block"
-        />
+      <section className="bg-mist pt-12 pb-16 lg:pb-32">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <h1 className="font-display text-5xl font-bold uppercase sm:text-6xl">About</h1>
           <hr className="mx-auto mt-2 w-[45%] border-berry" />
@@ -49,14 +39,26 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="appear mx-auto mt-12 max-w-5xl px-4 xl:pl-[22rem]">
-          <h2 className="text-center text-3xl text-berry sm:text-4xl xl:text-left">Random Fun Facts About Me</h2>
-          <hr className="mx-auto mt-2 mb-4 w-full max-w-md border-ink xl:mx-0" />
-          <ul className="space-y-2 text-lg capitalize">
-            {about.funFacts.map((fact) => (
-              <li key={fact}>{fact}</li>
-            ))}
-          </ul>
+        <div className="relative mx-auto mt-12 max-w-5xl px-4">
+          {/* On wide screens the portrait's finger points at the fun facts, as on the original (finger at 86% x, 46% y). */}
+          <Image
+            src={about.portrait.src}
+            alt={about.portrait.alt}
+            width={600}
+            height={800}
+            sizes="28rem"
+            preload
+            className="absolute -top-9 left-0 z-10 hidden w-[28rem] lg:block"
+          />
+          <div className="appear lg:pl-[24.5rem]">
+            <h2 className="text-center text-3xl text-berry sm:text-4xl lg:text-left">Random Fun Facts About Me</h2>
+            <hr className="mx-auto mt-2 mb-4 w-full max-w-md border-ink lg:mx-0" />
+            <ul className="space-y-2 text-center text-lg capitalize lg:text-left">
+              {about.funFacts.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
