@@ -810,7 +810,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "/Whipple_Attigo/",
+        "href": "/Whipple_Attigo/index.html",
         "label": "See Live"
       }
     ],
@@ -945,7 +945,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "/Whipple_RHP_Project/",
+        "href": "/Whipple_RHP_Project/index.html",
         "label": "See Live"
       }
     ],
@@ -1010,7 +1010,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "/CG_Solutions/",
+        "href": "/CG_Solutions/index.html",
         "label": "See Live"
       }
     ],
@@ -1217,7 +1217,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "/BMW_Enthusiast/",
+        "href": "/BMW_Enthusiast/index.html",
         "label": "See Live"
       }
     ],
@@ -1278,7 +1278,7 @@ export const projects: Project[] = [
     ],
     "links": [
       {
-        "href": "/RPS/",
+        "href": "/RPS/index.html",
         "label": "See Live"
       }
     ],

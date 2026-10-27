@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 import { projects } from "./src/content/projects";
 
+const legacyDemos = ["BMW_Enthusiast", "CG_Solutions", "RPS", "Whipple_Attigo", "Whipple_RHP_Project"];
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -35,6 +37,13 @@ const nextConfig: NextConfig = {
       { source: "/projects.html", destination: "/projects", permanent: true },
       { source: "/contact.php", destination: "/contact", permanent: true },
       { source: "/contact.html", destination: "/contact", permanent: true },
+      // Static demo sites copied from the old host; send folder URLs to their index page
+      // so the demos' relative asset paths keep resolving.
+      ...legacyDemos.map((demo) => ({
+        source: `/${demo}`,
+        destination: `/${demo}/index.html`,
+        permanent: true,
+      })),
       ...projects.map((project) => ({
         source: project.legacyPath,
         destination: `/projects/${project.slug}`,
