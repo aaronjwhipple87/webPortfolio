@@ -35,7 +35,8 @@ export function ContactForm() {
   ] as const;
 
   return (
-    <form action={formAction} noValidate className="space-y-5 rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+    <form action={formAction} noValidate className="space-y-5 rounded-2xl bg-paper p-6 shadow-sm sm:p-8">
+      <h2 className="text-center text-3xl text-berry">Get in touch:</h2>
       {fields.map((field) => {
         const errors = state.errors?.[field.name];
         return (
@@ -91,7 +92,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="rounded-full bg-berry px-8 py-2 text-white transition-colors hover:bg-berry-dark disabled:opacity-60"
+        className="rounded-full bg-berry px-8 py-2 text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send Message"}
       </button>

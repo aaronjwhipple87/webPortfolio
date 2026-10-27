@@ -25,54 +25,55 @@ export default function AboutPage() {
       />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
 
-      <section className="bg-mist py-16">
-        <div className="mx-auto grid max-w-5xl items-start gap-10 px-4 md:grid-cols-[1fr_18rem]">
-          <div>
-            <h1 className="font-display text-5xl font-bold uppercase">About</h1>
-            <hr className="my-4 w-32 border-t-4 border-ink" />
-            <p className="leading-relaxed">
-              {about.intro} If you&apos;d like to work or collaborate with me,{" "}
-              <Link href="/contact" className="font-bold text-berry underline-offset-4 hover:underline">
-                contact me
-              </Link>
-              .
-            </p>
+      <section className="relative bg-mist pt-12 pb-16 xl:min-h-[44rem]">
+        {/* On wide screens the portrait sits to the left and points at the fun facts, as on the original. */}
+        <Image
+          src={about.portrait.src}
+          alt={about.portrait.alt}
+          width={600}
+          height={800}
+          sizes="28rem"
+          preload
+          className="absolute top-56 left-0 z-10 hidden w-[28rem] max-w-[34%] xl:block"
+        />
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <h1 className="font-display text-5xl font-bold uppercase sm:text-6xl">About</h1>
+          <hr className="mx-auto mt-2 w-[45%] border-berry" />
+          <p className="mt-6 leading-relaxed">
+            {about.intro}
+            <br />
+            If you&apos;d like to work or collaborate with me,{" "}
+            <Link href="/contact" className="text-berry hover:underline">
+              contact me.
+            </Link>
+          </p>
+        </div>
 
-            <h2 className="mt-10 text-2xl font-bold text-berry">Random Fun Facts About Me</h2>
-            <ul className="mt-4 space-y-3">
-              {about.funFacts.map((fact) => (
-                <li key={fact} className="flex gap-3">
-                  <span aria-hidden className="text-2xl leading-none text-berry">
-                    ✱
-                  </span>
-                  {fact}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <Image
-            src={about.portrait.src}
-            alt={about.portrait.alt}
-            width={600}
-            height={800}
-            sizes="(min-width: 768px) 18rem, 80vw"
-            preload
-            className="mx-auto w-64 md:w-full"
-          />
+        <div className="appear mx-auto mt-12 max-w-5xl px-4 xl:pl-[22rem]">
+          <h2 className="text-center text-3xl text-berry sm:text-4xl xl:text-left">Random Fun Facts About Me</h2>
+          <hr className="mx-auto mt-2 mb-4 w-full max-w-md border-ink xl:mx-0" />
+          <ul className="space-y-2 text-lg capitalize">
+            {about.funFacts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section aria-labelledby="process-heading" className="py-16">
+      <section aria-labelledby="process-heading" className="py-12">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading id="process-heading">Project Process</SectionHeading>
-          <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {about.process.map((step, index) => (
-              <li key={step.title} className="rounded-2xl bg-white p-6 shadow-sm">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-berry font-bold text-white">
-                  {index + 1}
-                </span>
-                <h3 className="mt-4 text-xl font-bold">{step.title}</h3>
-                <p className="mt-2 text-base leading-relaxed">{step.body}</p>
+              <li key={step.title} className="text-center">
+                <h3 className="flex items-end justify-center gap-2 text-xl font-semibold capitalize">
+                  <span aria-hidden className="font-script text-5xl leading-none text-berry">
+                    {index + 1}
+                  </span>
+                  {step.title}
+                </h3>
+                <hr className="mx-auto mt-2 mb-3 w-[85%] border-pink" />
+                <p className="text-base leading-relaxed">{step.body}</p>
               </li>
             ))}
           </ol>

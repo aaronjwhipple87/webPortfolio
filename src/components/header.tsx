@@ -61,7 +61,7 @@ export function Header() {
           <a
             href={site.resume}
             download
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-berry px-4 py-1.5 text-base text-white transition-colors hover:bg-berry-dark md:mt-0 whitespace-nowrap"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-berry px-4 py-1.5 text-base text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry md:mt-0 whitespace-nowrap"
           >
             <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16" />

@@ -5,6 +5,7 @@ export const projects: Project[] = [
   {
     "slug": "df-patient-portal",
     "legacyPath": "/patientPortal.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB, GRAPHQL", "SES, SNS, S3, LAMBDA", "MJ FREEWAY, ONFLEET, DRIP", "ADOBE XD, TAILWIND", "RECOIL", "QR SCANNER, GEO LOCATION"],
     "title": "Dragonfly Patient Portal",
     "shortTitle": "DF Patient Portal",
     "featured": true,
@@ -174,6 +175,7 @@ export const projects: Project[] = [
   {
     "slug": "utah-grown",
     "legacyPath": "/utahgrown.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB", "GRAPHQL", "TAILWIND", "ACUITY", "DRIP", "S3"],
     "title": "Utah Grown",
     "shortTitle": "Utah Grown",
     "featured": true,
@@ -253,6 +255,7 @@ export const projects: Project[] = [
   {
     "slug": "betty-medicine",
     "legacyPath": "/betty.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB", "GRAPHQL", "TAILWIND", "S3"],
     "title": "Betty Medicine",
     "shortTitle": "Betty Medicine",
     "featured": false,
@@ -322,6 +325,7 @@ export const projects: Project[] = [
   {
     "slug": "df-wholesale",
     "legacyPath": "/dragonflyWholesale.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB", "GRAPHQL", "KATANA", "NODEMAILER", "ADOBE XD", "TAILWIND", "REDUX", "S3"],
     "title": "Dragonfly Wholesale",
     "shortTitle": "DF Wholesale",
     "featured": false,
@@ -392,6 +396,7 @@ export const projects: Project[] = [
   {
     "slug": "sapa-directory",
     "legacyPath": "/sapaDirectory.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB", "GRAPHQL", "TAILWIND", "S3"],
     "title": "SAPA Employee Directory",
     "shortTitle": "SAPA Directory",
     "featured": false,
@@ -472,6 +477,7 @@ export const projects: Project[] = [
   {
     "slug": "df-processing",
     "legacyPath": "/dragonflyProcessing.html",
+    "cardTags": ["NEXTJS", "AWS", "DYNAMO DB", "GRAPHQL", "TAILWIND", "S3", "THREEJS", "DRIP"],
     "title": "Dragonfly Processing",
     "shortTitle": "DF Processing",
     "featured": false,
@@ -551,6 +557,7 @@ export const projects: Project[] = [
   {
     "slug": "choredoor",
     "legacyPath": "/choredoor.html",
+    "cardTags": ["REACT JS", "BOOTSTRAP", "SASS", "STRIPE", "FIREBASE", "ADOBE XD", "REDUX"],
     "title": "ChoreDoor",
     "shortTitle": "ChoreDoor",
     "featured": true,
@@ -624,6 +631,7 @@ export const projects: Project[] = [
   {
     "slug": "amazon-clone",
     "legacyPath": "/amazonClone.html",
+    "cardTags": ["HTML5", "CSS3", "STRIPE", "FIREBASE", "REACT JS"],
     "title": "Amazon Clone",
     "shortTitle": "Amazon Clone",
     "featured": false,
@@ -679,6 +687,7 @@ export const projects: Project[] = [
   {
     "slug": "aarons-recipes",
     "legacyPath": "/aaronRecipes.html",
+    "cardTags": ["HTML5", "BOOTSTRAP 4", "SASS", "MONGODB", "REACT JS"],
     "title": "Aaron's Recipes",
     "shortTitle": "Aaron's Recipes",
     "featured": false,
@@ -735,6 +744,7 @@ export const projects: Project[] = [
   {
     "slug": "sinless-treats",
     "legacyPath": "/sinless.html",
+    "cardTags": ["SHOPIFY", "LIQUID", "ADOBE XD"],
     "title": "Sinless Treats",
     "shortTitle": "Sinless Treats",
     "featured": false,
@@ -788,6 +798,7 @@ export const projects: Project[] = [
   {
     "slug": "attigo",
     "legacyPath": "/attigo.html",
+    "cardTags": ["HTML5", "CSS3", "BOOTSTRAP 4", "SASS", "JAVASCRIPT"],
     "title": "Attigo",
     "shortTitle": "Attigo",
     "featured": false,
@@ -851,6 +862,7 @@ export const projects: Project[] = [
   {
     "slug": "budget-rite",
     "legacyPath": "/budgetRite.html",
+    "cardTags": ["HTML5", "SASS", "BULMA", "PHP", "MYSQL"],
     "title": "Budget Rite",
     "shortTitle": "Budget Rite",
     "featured": false,
@@ -925,6 +937,7 @@ export const projects: Project[] = [
   {
     "slug": "rent-own-homes",
     "legacyPath": "/rhp.html",
+    "cardTags": ["HTML5", "CSS3", "BOOTSTRAP 4", "SASS"],
     "title": "Rent Own Homes Pro",
     "shortTitle": "Rent Own Homes",
     "featured": false,
@@ -985,7 +998,17 @@ export const projects: Project[] = [
   },
   {
     "slug": "cg-solutions",
+    "hoverReveal": {
+      "phrase": "2D renderings",
+      "image": {
+        "src": "/img/cg_2dRendering.png",
+        "alt": "CG Solutions 2D rendering of a client project",
+        "width": 752,
+        "height": 253
+      }
+    },
     "legacyPath": "/cgSolutions.html",
+    "cardTags": ["HTML5", "CSS3", "BOOTSTRAP 4", "SASS", "JAVASCRIPT"],
     "title": "CG Solutions",
     "shortTitle": "CG Solutions",
     "featured": false,
@@ -1072,6 +1095,7 @@ export const projects: Project[] = [
   {
     "slug": "trainer-iphone-app",
     "legacyPath": "/trainerApp.html",
+    "cardTags": ["SWIFT", "XCODE", "SQLITE"],
     "title": "Trainer iPhone App",
     "shortTitle": "Trainer iPhone App",
     "featured": false,
@@ -1133,6 +1157,7 @@ export const projects: Project[] = [
   {
     "slug": "online-blog",
     "legacyPath": "/blog.html",
+    "cardTags": ["HTML5", "CSS3", "BULMA", "PHP", "MYSQL"],
     "title": "Online Blog",
     "shortTitle": "Online Blog",
     "featured": false,
@@ -1198,6 +1223,7 @@ export const projects: Project[] = [
   {
     "slug": "bmw-enthusiast",
     "legacyPath": "/bmw.html",
+    "cardTags": ["HTML5", "CSS3", "BOOTSTRAP 4"],
     "title": "BMW M Class Enthusiast",
     "shortTitle": "BMW Enthusiast",
     "featured": false,
@@ -1258,6 +1284,7 @@ export const projects: Project[] = [
   {
     "slug": "rock-paper-scissors",
     "legacyPath": "/rps.html",
+    "cardTags": ["HTML5", "CSS3", "BOOTSTRAP 4", "VUE JAVASCRIPT"],
     "title": "Rock Paper Scissors Game",
     "shortTitle": "Rock Paper Scissors",
     "featured": false,
@@ -1305,6 +1332,7 @@ export const projects: Project[] = [
   {
     "slug": "text-adventure",
     "legacyPath": "/textAdventure.html",
+    "cardTags": ["PYTHON"],
     "title": "Text Adventure",
     "shortTitle": "Text Adventure",
     "featured": false,

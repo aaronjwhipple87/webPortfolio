@@ -24,24 +24,33 @@ export default function Home() {
           <p className="text-lg text-ink sm:text-xl">{site.tagline}</p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors hover:bg-berry-dark"
+            className="mt-6 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry"
           >
             Contact Me
           </Link>
         </div>
       </section>
 
-      <section aria-labelledby="skills-heading" className="bg-mist py-16">
+      <section aria-labelledby="skills-heading" className="overflow-hidden bg-mist py-16">
         <div className="mx-auto max-w-5xl px-4">
           <SectionHeading id="skills-heading">Welcome to my Portfolio</SectionHeading>
 
           <h3 className="border-b-2 border-ink pb-1 text-right text-ink">My Skills</h3>
           <ul className="my-10 space-y-8">
-            {primarySkills.map((skill) => (
-              <li key={skill.name} className="grid grid-cols-[5rem_1fr] items-center gap-6 sm:grid-cols-[7rem_1fr]">
+            {primarySkills.map((skill, index) => (
+              <li
+                key={skill.name}
+                className={`grid grid-cols-[5rem_1fr] items-center gap-6 sm:grid-cols-[8rem_1fr] ${
+                  index % 2 === 0 ? "slide-in-left" : "slide-in-right"
+                }`}
+              >
                 <div className="flex flex-col items-center gap-1">
-                  <Image src={skill.logo} alt="" width={96} height={96} className="h-14 w-auto object-contain sm:h-16" />
-                  <span className="text-base font-bold text-paper">{skill.name}</span>
+                  <Image src={skill.logo} alt="" width={96} height={96} className="h-16 w-auto object-contain sm:h-20" />
+                  <span
+                    className={`text-base font-bold text-paper sm:text-xl ${"logoHasName" in skill ? "sr-only" : ""}`}
+                  >
+                    {skill.name}
+                  </span>
                 </div>
                 <div
                   role="meter"
@@ -49,9 +58,9 @@ export default function Home() {
                   aria-valuemin={0}
                   aria-valuemax={100}
                   aria-valuenow={skill.level}
-                  className="h-5 overflow-hidden rounded-full bg-paper"
+                  className="h-7 overflow-hidden rounded bg-paper"
                 >
-                  <div className="h-full rounded-full bg-berry" style={{ width: `${skill.level}%` }} />
+                  <div className="bar-striped h-full bg-berry" style={{ width: `${skill.level}%` }} />
                 </div>
               </li>
             ))}
@@ -82,7 +91,7 @@ export default function Home() {
             <p className="text-ink">These are just a few projects I&apos;ve done recently.</p>
             <Link
               href="/projects"
-              className="mt-4 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors hover:bg-berry-dark"
+              className="mt-4 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry"
             >
               See More Projects
             </Link>

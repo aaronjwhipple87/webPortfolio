@@ -19,7 +19,7 @@ export function Footer() {
             {nav.map((item, index) => (
               <li key={item.href} className="flex items-center gap-3">
                 {index > 0 && <span aria-hidden>|</span>}
-                <Link href={item.href} className="hover:text-mist">
+                <Link href={item.href} className="font-bold text-pink hover:text-paper">
                   {item.label}
                 </Link>
               </li>
@@ -30,10 +30,10 @@ export function Footer() {
         <div className="grid w-full gap-6 sm:grid-cols-2">
           <address className="not-italic">
             <p className="font-bold">Contact</p>
-            <a href={`mailto:${site.email}`} className="block hover:text-mist">
+            <a href={`mailto:${site.email}`} className="block text-pink hover:text-paper">
               {site.email}
             </a>
-            <a href={site.phone.href} className="block hover:text-mist">
+            <a href={site.phone.href} className="block text-pink hover:text-paper">
               {site.phone.display}
             </a>
           </address>
@@ -45,7 +45,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer me"
                   aria-label={social.label}
-                  className="block transition-colors hover:text-mist"
+                  className="block text-pink transition-colors hover:text-paper"
                 >
                   <SocialIcon name={social.label} />
                 </a>

@@ -15,6 +15,8 @@ export type Project = {
   summary: string;
   description: string[];
   tech: string[];
+  /** Short uppercase tech list shown on the card overlay, as on the original site. */
+  cardTags: string[];
   timeline: string[];
   links: { href: string; label: string }[];
   hero: ImageAsset | null;
@@ -25,4 +27,6 @@ export type Project = {
     color?: string;
   };
   gallery: (ImageAsset & { title: string | null })[];
+  /** Phrase in the description that reveals an image on hover, as the original CG Solutions page did. */
+  hoverReveal?: { phrase: string; image: ImageAsset };
 };

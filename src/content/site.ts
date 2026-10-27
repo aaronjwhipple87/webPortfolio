@@ -24,8 +24,8 @@ export const nav = [
 ] as const;
 
 export const primarySkills = [
-  { name: "AWS", logo: "/img/brand/aws.svg.png", level: 93 },
-  { name: "Next.js", logo: "/img/brand/nextjs.svg.png", level: 95 },
+  { name: "AWS", logo: "/img/brand/aws.svg.png", level: 93, logoHasName: true },
+  { name: "Next.js", logo: "/img/brand/nextjs.svg.png", level: 95, logoHasName: true },
   { name: "React", logo: "/img/brand/react.svg", level: 90 },
   { name: "HTML5", logo: "/img/brand/html5.svg", level: 90 },
   { name: "CSS3", logo: "/img/brand/css3.svg", level: 85 },

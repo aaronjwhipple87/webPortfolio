@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ProjectsPage() {
   return (
-    <section className="py-16">
+    <section className="overflow-hidden bg-mist py-16">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -36,10 +36,11 @@ export default function ProjectsPage() {
 
       <div className="mx-auto max-w-6xl px-4">
         <h1 className="text-center font-display text-5xl font-bold uppercase">Projects</h1>
-        <hr className="mx-auto my-4 mb-12 w-32 border-t-4 border-ink" />
+        <hr className="mx-auto mt-2 mb-12 w-[45%] border-berry" />
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <li key={project.slug}>
+          {/* As on the original site, each row of three slides in from alternating sides. */}
+          {projects.map((project, index) => (
+            <li key={project.slug} className={Math.floor(index / 3) % 2 === 0 ? "slide-in-right" : "slide-in-left"}>
               <ProjectCard project={project} />
             </li>
           ))}

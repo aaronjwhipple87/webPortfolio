@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { site } from "@/content/site";
+import type { Project } from "@/content/types";
 import { breadcrumbSchema, JsonLd, personId } from "@/lib/json-ld";
 import { pageMetadata } from "@/lib/metadata";
 import { getProject, projects } from "@/lib/projects";
@@ -95,7 +96,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-berry px-6 py-2 text-white transition-colors hover:bg-berry-dark"
+                    className="rounded-full bg-berry px-6 py-2 text-white transition-colors border-2 border-berry hover:bg-mist hover:text-berry"
                   >
                     {link.label}
                   </a>
@@ -109,7 +110,9 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             <hr className="my-4 w-24 border-t-4 border-berry" />
             <div className="space-y-4 leading-relaxed">
               {project.description.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>
+                  <Paragraph text={paragraph} reveal={project.hoverReveal} />
+                </p>
               ))}
             </div>
 
@@ -175,5 +178,28 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         </div>
       </div>
     </article>
+  );
+}
+
+/** Renders a description paragraph, turning the project's hover-reveal phrase into a hoverable image preview. */
+function Paragraph({ text, reveal }: { text: string; reveal: Project["hoverReveal"] }) {
+  const at = reveal ? text.indexOf(reveal.phrase) : -1;
+  if (!reveal || at === -1) return text;
+
+  return (
+    <>
+      {text.slice(0, at)}
+      <span tabIndex={0} className="group cursor-help font-bold outline-none">
+        {reveal.phrase}
+        <Image
+          src={reveal.image.src}
+          alt={reveal.image.alt}
+          width={reveal.image.width}
+          height={reveal.image.height}
+          className="my-2 hidden h-auto w-full group-hover:block group-focus-visible:block"
+        />
+      </span>
+      {text.slice(at + reveal.phrase.length)}
+    </>
   );
 }

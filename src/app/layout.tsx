@@ -21,6 +21,13 @@ const julius = localFont({
   display: "swap",
 });
 
+const kaushan = localFont({
+  src: "../fonts/KaushanScript-Regular.woff2",
+  variable: "--font-kaushan",
+  display: "swap",
+  preload: false,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: site.title, template: `%s | ${site.name}` },
@@ -69,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${monda.variable} ${julius.variable}`}>
+    <html lang="en" className={`${monda.variable} ${julius.variable} ${kaushan.variable}`}>
       <body className="flex min-h-dvh flex-col font-sans text-lg antialiased">
         <a
           href="#main"
