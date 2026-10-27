@@ -26,6 +26,63 @@ function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (char) => `&#${char.charCodeAt(0)};`);
 }
 
+const siteHost = new URL(site.url).host;
+
+// Vercel adds approximate visitor geolocation headers; city arrives URL-encoded.
+function describeLocation(requestHeaders: Headers) {
+  const city = requestHeaders.get("x-vercel-ip-city");
+  const parts = [
+    city ? safeDecode(city) : null,
+    requestHeaders.get("x-vercel-ip-country-region"),
+    requestHeaders.get("x-vercel-ip-country"),
+  ].filter(Boolean);
+  return parts.length ? parts.join(", ") : null;
+}
+
+function safeDecode(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+function renderEmail(fields: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  sentAt: string;
+  location: string | null;
+}) {
+  const rows: [string, string][] = [
+    ["Name", escapeHtml(fields.name)],
+    ["Email", `<a href="mailto:${escapeHtml(fields.email)}" style="color:#922260">${escapeHtml(fields.email)}</a>`],
+    ["Subject", escapeHtml(fields.subject)],
+    ["Sent", escapeHtml(fields.sentAt)],
+  ];
+  if (fields.location) rows.push(["Location", `${escapeHtml(fields.location)} <span style="color:#6b7b7e">(approximate)</span>`]);
+
+  const rowHtml = rows
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:4px 16px 4px 0;color:#6b7b7e;vertical-align:top;white-space:nowrap">${label}</td><td style="padding:4px 0;color:#223134">${value}</td></tr>`,
+    )
+    .join("");
+
+  return `<div style="background:#f7f9fa;padding:24px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #adc4ce">
+<tr><td style="background:#922260;color:#ffffff;padding:16px 24px">
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:0.85">${siteHost} &middot; Contact form</div>
+<div style="font-size:20px;font-weight:bold;margin-top:4px">New message from ${escapeHtml(fields.name)}</div>
+</td></tr>
+<tr><td style="padding:20px 24px 8px"><table role="presentation" cellpadding="0" cellspacing="0">${rowHtml}</table></td></tr>
+<tr><td style="padding:8px 24px 20px"><div style="border-left:4px solid #be7aa0;background:#f7f9fa;padding:12px 16px;color:#223134;white-space:pre-wrap">${escapeHtml(fields.message)}</div></td></tr>
+<tr><td style="padding:12px 24px;border-top:1px solid #adc4ce;color:#6b7b7e;font-size:13px">Sent from the contact form at <a href="${site.url}/contact" style="color:#922260">${siteHost}/contact</a>. Reply to this email to answer ${escapeHtml(fields.name)} directly.</td></tr>
+</table>
+</div>`;
+}
+
 export async function sendContactMessage(_prev: ContactState, formData: FormData): Promise<ContactState> {
   // Honeypot: real visitors never see or fill this field.
   if (formData.get("company")) {
@@ -70,14 +127,33 @@ export async function sendContactMessage(_prev: ContactState, formData: FormData
   }
 
   const { name, email, subject, message } = parsed.data;
+  const sentAt = new Date().toLocaleString("en-US", {
+    timeZone: "America/Denver",
+    dateStyle: "full",
+    timeStyle: "short",
+  });
+  const location = describeLocation(requestHeaders);
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
     from: process.env.CONTACT_FROM_EMAIL ?? "Portfolio Contact <onboarding@resend.dev>",
     to: process.env.CONTACT_TO_EMAIL ?? site.email,
     replyTo: email,
     subject: `[Portfolio] ${subject}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    html: `<p><strong>Name:</strong> ${escapeHtml(name)}<br><strong>Email:</strong> ${escapeHtml(email)}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
+    text: [
+      `New message from the contact form on ${siteHost}`,
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      `Sent: ${sentAt}`,
+      ...(location ? [`Location: ${location}`] : []),
+      "",
+      message,
+      "",
+      "--",
+      `Reply to this email to answer ${name} directly.`,
+    ].join("\n"),
+    html: renderEmail({ name, email, subject, message, sentAt, location }),
   });
 
   if (error) {
