@@ -18,10 +18,10 @@ export default function Home() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-[rgba(124,99,99,0.2)] to-black/20" />
-        <div className="relative px-4 text-center">
-          <h1 className="font-display text-5xl font-bold text-berry sm:text-7xl">{site.name}</h1>
+        <div className="relative mx-4 max-w-xl rounded-2xl bg-paper/70 px-6 py-8 text-center shadow-lg backdrop-blur-sm sm:px-10">
+          <h1 className="font-display text-4xl font-bold text-berry sm:text-5xl lg:text-6xl">{site.name}</h1>
           <hr className="mx-auto my-4 w-40 border-t-4 border-berry" />
-          <p className="text-xl text-ink sm:text-2xl">{site.tagline}</p>
+          <p className="text-lg text-ink sm:text-xl">{site.tagline}</p>
           <Link
             href="/contact"
             className="mt-6 inline-block rounded-full bg-berry px-6 py-2 text-white transition-colors hover:bg-berry-dark"

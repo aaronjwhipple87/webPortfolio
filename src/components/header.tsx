@@ -23,7 +23,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-md bg-berry p-2 text-white sm:hidden"
+          className="rounded-md bg-berry p-2 text-white md:hidden"
           aria-expanded={open}
           aria-controls="site-nav"
           onClick={() => setOpen((value) => !value)}
@@ -37,9 +37,9 @@ export function Header() {
         <nav
           id="site-nav"
           aria-label="Main"
-          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 bg-paper p-4 shadow-md sm:static sm:flex sm:flex-1 sm:flex-row sm:items-center sm:justify-between sm:bg-transparent sm:p-0 sm:shadow-none`}
+          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 bg-paper p-4 shadow-md md:static md:flex md:flex-1 md:flex-row md:items-center md:justify-between md:bg-transparent md:p-0 md:shadow-none`}
         >
-          <ul className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+          <ul className="flex flex-col gap-1 md:flex-row md:gap-2">
             {nav.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -61,7 +61,7 @@ export function Header() {
           <a
             href={site.resume}
             download
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-berry px-4 py-1.5 text-base text-white transition-colors hover:bg-berry-dark sm:mt-0"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-berry px-4 py-1.5 text-base text-white transition-colors hover:bg-berry-dark md:mt-0 whitespace-nowrap"
           >
             <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16" />
